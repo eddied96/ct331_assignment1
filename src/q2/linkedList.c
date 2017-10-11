@@ -39,6 +39,46 @@ void traverse(listElement* start){
   }
 }
 
+//push element to head of a list
+void push(listElement** list, char* data, size_t size) {
+	listElement* newEl = createEl(data, size);
+	newEl->next = *list;
+	*list = newEl;
+}
+
+//pops element from head of list
+void pop(listElement** list) {
+	listElement* el = *list;
+	*list = el->next;
+}
+
+//enqueues a new element to head of list
+void enqueue(listElement** list, char*data, size_t size) {
+	listElement* newEl = createEl(data, size);
+	newEl->next = *list;
+	*list = newEl;
+}
+
+//dequeues element from end of list
+void dequeue(listElement* list) {
+	listElement* head = list;
+	while (head->next->next != NULL) {
+		head = head->next;
+	}
+	deleteAfter(head);
+}
+
+//returns length of linkedList
+int length(listElement* list) {
+	int count = 0;
+	listElement* head = list;
+		while (head != NULL) {
+			head = head->next;
+			count++;
+		}
+		return count;
+}
+
 //Inserts a new element after the given el
 //Returns the pointer to the new element
 listElement* insertAfter(listElement* el, char* data, size_t size){

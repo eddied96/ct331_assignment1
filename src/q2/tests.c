@@ -4,7 +4,7 @@
 
 void runTests(){
   printf("Tests running...\n");
-  listElement* l = createEl("Test String (1).", 30);
+  listElement* l = createEl("1", 30);
   //printf("%s\n%p\n", l->data, l->next);
   //Test create and traverse
   traverse(l);
@@ -16,10 +16,43 @@ void runTests(){
   traverse(l);
   printf("\n");
 
+  //test length
+  printf("Testing the length function: %d\n", length(l));
+  printf("\n");
+
+  //test push
+  printf("Testing Push\n");
+  push(&l, "new element(0)", 30);
+  traverse(l);
+  printf("Testing the length function: %d\n", length(l));
+  printf("\n");
+
+  //test pop
+  printf("Testing Pop\n");
+  pop(&l);
+  traverse(l);
+  printf("Testing the length function: %d\n", length(l));
+  printf("\n");
+
+  //test enqueue
+  printf("Testing enqueue\n");
+  enqueue(&l, "new Element (0)", 30);
+  traverse(l);
+  printf("Testing the length function: %d\n", length(l));
+  printf("\n");
+
+  //test dequeue
+  printf("Testing dequeue\n");
+  dequeue(l);
+  traverse(l);
+  printf("Testing the length function: %d\n", length(l));
+  printf("\n");
+
   // Test delete after
   deleteAfter(l);
   traverse(l);
   printf("\n");
+
 
   printf("\nTests complete.\n");
 }
