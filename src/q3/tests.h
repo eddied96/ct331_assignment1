@@ -3,11 +3,11 @@
 
 void printChar(void* data);
 
-void printDouble(void* data);
-
 void printInt(void* data);
 
 void printStr(void* data);
+
+void printDouble(void* data);
 
 void runTests();
 

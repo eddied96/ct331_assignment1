@@ -10,19 +10,19 @@ listElement* createEl(char* data, size_t size);
 //Prints out each element in the list
 void traverse(listElement* start);
 
-//returns number of elements in list
+//returns size of linkedList
 int length(listElement* list);
 
-//adds element to head of list
+//pushes element to head of linkedList
 void push(listElement** list, char* data, size_t size);
 
-//removes element from head of list
+//Pops element from head of Linkedist
 void pop(listElement** list);
 
 //Enqueues element
 void enqueue(listElement** list, char* data, size_t size);
 
-//dequeues element
+//Dequeues element
 void dequeue(listElement* list);
 
 //Inserts a new element after the given el

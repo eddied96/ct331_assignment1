@@ -6,7 +6,7 @@
 typedef struct listElementStruct {
 	void* data;
 	size_t size;
-	void (*printFunction)();
+	void(*printFunction)();
 	struct listElementStruct* next;
 } listElement;
 
@@ -44,9 +44,9 @@ void traverse(listElement* start) {
 
 //push element to head of a list
 void push(listElement** list, void* data, size_t size, void* type) {
-	listElement* newEl = createEl(data, size, type);
-	newEl->next = *list;
-	*list = newEl;
+	listElement* newElement = createEl(data, size, type);
+	newElement->next = *list;
+	*list = newElement;
 }
 
 //pops element from head of list
@@ -57,9 +57,9 @@ void pop(listElement** list) {
 
 //enqueues a new element to head of list
 void enqueue(listElement** list, void*data, size_t size, void* type) {
-	listElement* newEl = createEl(data, size, type);
-	newEl->next = *list;
-	*list = newEl;
+	listElement* newElement = createEl(data, size, type);
+	newElement->next = *list;
+	*list = newElement;
 }
 
 //dequeues element from end of list
@@ -85,11 +85,11 @@ int length(listElement* list) {
 //Inserts a new element after the given el
 //Returns the pointer to the new element
 listElement* insertAfter(listElement* el, void* data, size_t size, void* type) {
-	listElement* newEl = createEl(data, size, type);
+	listElement* newElement = createEl(data, size, type);
 	listElement* next = el->next;
-	newEl->next = next;
-	el->next = newEl;
-	return newEl;
+	newElement->next = next;
+	el->next = newElement;
+	return newElement;
 }
 
 
